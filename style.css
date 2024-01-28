@@ -2039,3 +2039,17 @@ ul {
 .faq-section {
     padding: 60px 0;
 }
+
+.search-container-hero {
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.search-container-hero button {
+    padding: 20px 15px !important;
+}
+
+.search-container-hero .input-wrapper {
+    border-radius: 6px !important;
+}
