@@ -623,6 +623,11 @@ ul {
     font-size: 16px;
     color: #fff;
     text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+.footer-ul li a:hover {
+    color: #b2b4b6;
 }
 
 .footer-ul li svg {
@@ -1636,8 +1641,7 @@ ul {
     }
 
     .Copyright {
-        margin-top: 30px;
-        text-align: left;
+        margin-top: 20px;
     }
 
 
@@ -1714,6 +1718,16 @@ ul {
 
     .contact-items-box {
         margin-bottom: 20px;
+    }
+
+    .footer-ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px !important;
+    }
+
+    .footer-ul li {
+        margin-bottom: 0;
     }
 }
 
