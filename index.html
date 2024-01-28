@@ -477,13 +477,13 @@
                      </h2>
                      <h5 class="sm-enterVehicle">Enter Vehicle Manufacturer:</h5>
 
-                     <div class="d-flex mt-4 view-btn">
+                     <div class="d-flex mt-4 view-btn hero-view-btnAll">
                         <a href="./browse-redio-code.html" id="toList" class="primary-outline-button m-0">
                            View Radio Codes
                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20">
                               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                            </svg>
-                        </a>
+                        </a> 
                      </div>
                   </div>
                   <div class="col-md-6 hero-img" data-aos="fade-down">
@@ -504,16 +504,17 @@
                                              style="fill: rgb(0, 29, 61)"
                                           ></path>
                                        </svg>
+                                       
                                     </div>
                                     <input type="search" placeholder="Ford, Vauxhalli" name="searchTerm" required="" />
+                                    <button type="submit" class="search-icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                       </svg>
+   
+                                    </button>
                                  </div>
-                                 <button type="submit" class="search-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20">
-                                       <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                                    </svg>
-
-                                    view your code
-                                 </button>
+                         
                                  <div class="d-flex mt-4 hero-view-btn">
                                     <a href="#manufactures-list" id="toList" class="primary-outline-button m-0">
                                        View All Radio Codes
@@ -812,7 +813,7 @@
          <section class="about-section" id="About">
             <div class="container mx-auto">
                <div class="row align-items-center about-row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                      <div class="about-content">
                         <div class="">
                            <h2>About Us!</h2>
@@ -836,11 +837,7 @@
                         </p>
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="about-img">
-                        <img src="./assets/img/pexels-higher-vibration-12869738.jpg" alt="" class="w-100 h-100" />
-                     </div>
-                  </div>
+                
                </div>
             </div>
          </section>
@@ -1397,7 +1394,7 @@
          let btn = document.querySelector(".sm-contact");
          let navbarContact = document.querySelector(".navbar-contact");
          btn.addEventListener("click", () => {
-            navbarContact.classList.toggle("d-flex");
+            navbarContact.classList.toggle("active-nav");
          });
       </script>
    </body>

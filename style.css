@@ -22,6 +22,8 @@ body {
     background-color: #fff;
     color: #171717;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+
 }
 
 h1,
@@ -58,7 +60,18 @@ ul {
 }
 
 .navbar-contact {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: all .3s ease-in;
+    display: flex;
+    top: 0;
+
+}
+
+.navbar-contact.active-nav {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .main-nav a {
@@ -152,6 +165,7 @@ ul {
     /* margin-bottom: 10px; */
     display: flex;
     padding: 5px 15px;
+    height: 70px;
 }
 
 .input-wrapper {
@@ -175,6 +189,10 @@ ul {
     background-color: #f2f6f7;
     border-radius: 0px;
     font-size: 16px;
+}
+
+.search-container a {
+    height: 100%;
 }
 
 .search-container button {
@@ -1038,11 +1056,14 @@ ul {
     color: #fff;
     text-transform: capitalize;
     text-decoration: none;
-    padding: 12px 30px;
+    padding: 13px 30px;
     background-color: var(--secondary-color);
     border-radius: 6px;
     border: none;
     outline: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
 }
 
@@ -1077,7 +1098,6 @@ ul {
     padding: 20px 0;
     text-align: center;
     border-bottom: 1px solid #c9ced3;
-    margin-bottom: 10px;
     display: flex;
     gap: 15px;
     align-items: center;
@@ -1099,25 +1119,33 @@ ul {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .info-box__item p {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     margin: 0;
-    color: var(--barnd-color);
+    color: var(--text-color);
 }
 
 .info-box__item span {
     font-size: 16px;
     font-weight: 500;
-    color: #636364;
+    color: #242425;
+}
+
+.info-box__item--email-box {
+    background-color: #f2f6f7;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+
 }
 
 .info-box__item label {
     font-size: 14px;
-    color: var(--barnd-color);
+    color: var(--text-color);
 
     font-weight: 500;
     display: block;
@@ -1129,9 +1157,16 @@ ul {
     padding: 14px 10px;
     outline: none;
     border: none;
-    background-color: #f2f6f7;
     border-radius: 6px;
     font-size: 16px;
+    background-color: #f2f6f7;
+
+}
+
+.info-box__item--email-icon {
+    padding: 12px 15px;
+    border-right: 1px solid #eee;
+
 }
 
 .info-box__footer {
@@ -1157,7 +1192,15 @@ ul {
     border-radius: 6px;
     border: none;
     outline: none;
+    display: flex;
 
+    align-items: center;
+    gap: 10px;
+    transition: all .3s ease-in;
+}
+
+.info-box__footer button:hover {
+    background-color: #001d3d;
 }
 
 .payment-report {
@@ -1170,12 +1213,12 @@ ul {
 }
 
 .payment-detailes {
-    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 1px 20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
 }
 
 .payment-detailes p {
@@ -1441,10 +1484,7 @@ ul {
         width: 150px !important;
     }
 
-    .contact-btn svg {
-        display: none;
-        color: var(--barnd-color);
-    }
+
 
     .hero-section {
         height: 450px !important;
@@ -1474,6 +1514,10 @@ ul {
         justify-content: center;
     }
 
+    .hero-view-btnAll {
+        display: none !important;
+    }
+
     .view-btn a {
         padding: 12px 33px !important;
     }
@@ -1492,10 +1536,7 @@ ul {
         box-shadow: none;
     }
 
-    .search-container {
-        flex-direction: column;
-        gap: 15px;
-    }
+    .search-container {}
 
     .search-form h5 {
         text-align: left;
@@ -1509,14 +1550,21 @@ ul {
 
     .input-wrapper {
         width: 100%;
-        border-radius: 6px !important;
         overflow: hidden;
+        height: 100%;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
     }
 
     .search-container button {
         width: 100%;
-        border-radius: 6px !important;
-        padding: 12px 60px !important;
+
+    }
+
+    .search-icon span {
+        display: none;
     }
 
     .popularCarBrand-box-wrapper {
@@ -1556,9 +1604,7 @@ ul {
 
     }
 
-    .view-btn {
-        display: none !important;
-    }
+
 
     .hero-view-btn {
         width: 100%;
@@ -1590,7 +1636,10 @@ ul {
         gap: 15px;
     }
 
-
+    .about-section,
+    .cutomer-reviews {
+        padding-bottom: 0px;
+    }
 
     .sm-enterVehicle {
         display: block;
@@ -1675,18 +1724,28 @@ ul {
         gap: 10px;
     }
 
+    .sub-hero-section {
+        position: relative;
+        background-image: linear-gradient(#001d3dcc, #001d3de0), url(./assets/img/pexels-higher-vibration-12869738.jpg);
+    }
+
     .sub-hero__content h2 {
-        font-size: 34px;
+        font-size: 30px;
+    }
+
+    .browse-redio-code-title h2 {
+        font-size: 30px !important;
     }
 
     .popular-carStodio-title {
-        font-size: 34px !important;
+        font-size: 30px !important;
         margin-bottom: 15px !important;
 
     }
 
     .choose-row .col-md-4 {
         margin-bottom: 20px;
+
     }
 
     .input-wrapper {
@@ -1694,11 +1753,14 @@ ul {
     }
 
     .contact-information {
+        margin-bottom: 30px;
         height: 100%;
+        background-image: linear-gradient(#001d3dc9, #001d3dc9), url("./assets/img/pexels-higher-vibration-12869738.jpg");
     }
 
     .info-box {
         margin-bottom: 20px;
+        color: #001d3d;
     }
 
     .payment-report {
@@ -1706,7 +1768,8 @@ ul {
     }
 
     .accordion button .icon {
-        right: -24px;
+        right: -18px;
+        top: 20px;
     }
 
     .faq-hero,
@@ -1728,6 +1791,60 @@ ul {
 
     .footer-ul li {
         margin-bottom: 0;
+    }
+
+    .contact-item__svg svg {
+        width: 50px;
+    }
+
+    .contact-form-section {
+        padding-top: 0 !important;
+    }
+
+    .map-div {
+        margin-top: 20px;
+        padding: 0 15px !important;
+    }
+
+    .choose-section {
+        padding-top: 10px !important;
+
+    }
+
+    .faq-box {
+        padding-left: 15px !important;
+    }
+
+    .sub-hero__img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .sub-hero__content img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .popular-carStodio-col {
+        width: 50% !important;
+    }
+
+    .askQ-section .accordion button .icon {
+        right: -8px !important;
+        top: 14px !important;
+    }
+
+    .modalBody-col {
+        width: 50%;
+    }
+
+    .modal-redio-box__title {
+        padding: 12px 10px;
+        min-height: 100%;
+    }
+
+    .modal-redio-box__title h4 {
+        font-size: 16px;
     }
 }
 
@@ -1864,6 +1981,11 @@ ul {
     padding: 10px;
     outline: none;
     width: 100%;
+}
+
+.map-div {
+    padding: 0 50px;
+
 }
 
 .map-img {
