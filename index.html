@@ -841,7 +841,13 @@
                </div>
             </div>
          </section>
-
+         <div class="circle-progress">
+            <svg viewBox="0 0 100 100">
+              <circle class="track" cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#e3e3e3" />
+              <circle class="progress" cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#2ecc71" stroke-dasharray="141" stroke-dashoffset="141" />
+            </svg>
+            <p class="time-left">60</p>
+          </div>
          <section class="cutomer-reviews" id="Reviews">
             <div class="container mx-auto">
                <div class="section-title">
@@ -1396,6 +1402,8 @@
          btn.addEventListener("click", () => {
             navbarContact.classList.toggle("active-nav");
          });
+        
+
       </script>
    </body>
 </html>

@@ -397,7 +397,7 @@
                </div>
             </nav>
          </header>
-         <div class="contact-information position-relative">
+         <div class="contact-information position-relative" style="display: none;">
             <div class="">
                <div class="navbar-contact w-100 py-3">
                   <div class="contact-item">
@@ -571,7 +571,21 @@
                </div>
             </div>
          </div>
-         <section class="choose-section">
+        <div class="lodding">
+         <div class="block my-4">
+            <svg class="svg">
+               <circle class="circle" cx="90" cy="90" r="80" id="circle" />
+            </svg>
+            <div id="progress-bar-container" class="progress-container">
+               <div id="progress-bar"></div>
+               <div id="progress-text"> %</div>
+            </div>
+
+         </div>
+         <h3 class="text-center fw-bold">Searching from database</h3>
+
+        </div>
+         <section class="choose-section" >
             <div class="container mx-auto">
                <div class="section-title">
                   <h2>Why Choose Us?</h2>
@@ -826,6 +840,36 @@
             navbarContact.classList.toggle("active-nav");
 
          });
+         const progressBar = document.getElementById("progress-bar");
+         const progressText = document.getElementById("progress-text");
+         const circle = document.getElementById("circle");
+         const contentInfo = document.querySelector(".contact-information");
+
+         function startProgressBar(durationInSeconds) {
+            let progress = 0;
+            const interval = 1000; // 1 second interval
+            const totalSteps = durationInSeconds;
+
+            const updateProgressBar = () => {
+               progress += 100 / totalSteps;
+               circle.style.strokeDasharray = `${516 + progress * 5}`;
+               progressText.innerText = Math.floor(progress / (100 / totalSteps)) + 1 +"s";
+
+               let count = Math.floor(progress / (100 / totalSteps)) + 1;
+               if (count === 60) {
+                  clearInterval(progressInterval);
+                  showContent();
+               }
+            };
+
+            const progressInterval = setInterval(updateProgressBar, interval);
+            setTimeout(() => clearInterval(progressInterval), durationInSeconds * 1000);
+         }
+         function showContent() {
+      document.querySelector(".lodding").style.display = "none";
+      contentInfo.style.display = "block";
+    }
+         startProgressBar(60);
       </script>
    </body>
 </html>
