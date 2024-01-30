@@ -46,6 +46,12 @@ a {
     color: inherit;
 }
 
+.logo a {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .logo img {
     min-width: 170px;
     max-width: 170px;
@@ -91,6 +97,7 @@ a {
     color: #fff;
     text-decoration: none;
     transition: all .3s ease-in;
+    border: 1px solid var(--barnd-color);
 
 }
 
@@ -110,8 +117,9 @@ a {
     margin-bottom: 15px;
 }
 
-.main-nav a:hover {
+.main-nav .lg-contact a:hover {
     background-color: var(--barnd-color);
+    border: 1px solid var(--secondary-color);
 }
 
 .main-nav i {
@@ -2469,14 +2477,13 @@ input[type=radio]:checked~label {
     margin-bottom: 10px;
 }
 
-.inputWrapper input {
-    border: none;
-    padding: 12px 15px;
+.inputWrapper .input-code {
+
+
     width: 100%;
-    outline: none;
+
     font-size: 18px;
     font-weight: 600;
-    background-color: transparent;
 }
 
 .inputWrapper .copyBtn {
@@ -2495,4 +2502,29 @@ input[type=radio]:checked~label {
     font-size: 16px;
     font-weight: 700;
     color: var(--barnd-color);
+}
+
+#custom-toaster {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toaster-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
