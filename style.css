@@ -993,7 +993,7 @@ a {
 .modal-body {
     min-height: 400px;
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 
 }
@@ -1858,6 +1858,7 @@ a {
 
     .modalBody-col {
         width: 50%;
+        padding: 0 5px;
     }
 
     .modal-redio-box__title {
