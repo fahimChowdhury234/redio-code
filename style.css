@@ -1002,6 +1002,8 @@ a {
 #inputForm {
     position: absolute;
     height: 100%;
+    left: 0;
+    padding: 15px;
 }
 
 .fade-in {
@@ -1042,7 +1044,7 @@ a {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 15px;
-    width: 93%;
+    width: 100%;
 }
 
 
