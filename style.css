@@ -6,6 +6,7 @@
     margin: 0;
 }
 
+
 html {
     overflow-x: hidden;
 }
@@ -368,7 +369,7 @@ a {
 }
 
 .work-box:hover .work-box__content {
-    background-color: var(--secondary-color);
+    background-color: var(--barnd-color);
     color: #fff;
 
 }
@@ -1269,7 +1270,7 @@ a {
 }
 
 .find-box:hover .find-box__content {
-    background-color: var(--secondary-color);
+    background-color: var(--barnd-color);
     color: #fff !important;
 }
 
