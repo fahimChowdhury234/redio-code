@@ -387,6 +387,7 @@ a {
 .work-box__img {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 60px;
 
     transition: all .3s ease;
@@ -396,8 +397,8 @@ a {
 
 .work-box__img img {
     max-width: 100%;
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 170px;
+    max-height: 170px;
 }
 
 .work-box--count {
@@ -1598,10 +1599,14 @@ a {
         display: block;
     }
 
+    .work-box__img {
+        padding-bottom: 30px;
+    }
+
     .work-box__img img {
         max-width: 100%;
-        min-height: 200px !important;
-        max-height: 200px !important;
+        min-height: 170px !important;
+        max-height: 170px !important;
     }
 
     .work-box__content {
